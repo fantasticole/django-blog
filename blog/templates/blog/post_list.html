@@ -7,10 +7,17 @@
 		<div>
 			<h1><a href="">Django Blog</a></h1>
 		</div>
-		<div>
+		<!-- <div>
 			<p>Published on: [date]</p>
 			<h2><a href="">[Post Title]</a></h2>
 			<p>[Post Text]</p>
-		</div>
+		</div> -->
+		{% for post in posts %}
+			<div>
+				<p>Published on {{ post.published_date }}</p>
+				<h1><a href="`">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
